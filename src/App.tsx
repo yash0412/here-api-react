@@ -1,19 +1,15 @@
-import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
 import React from "react";
-import theme from "./ui/theme";
+import ButtonAppBar from "./components/toolbar";
+import { darkTheme, lightTheme } from "./ui/theme";
 
 function App() {
+  const [isDarkMode, setDarkMode] = React.useState(false);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
-      <Button variant="contained" color="secondary">
-        Hello World
-      </Button>
+      <ButtonAppBar modeChanged={{ isDarkMode, setDarkMode }} />
     </ThemeProvider>
   );
 }

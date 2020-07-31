@@ -1,4 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import Theme from "./theme.json";
+import DarkTheme from "./darkTheme.json";
+import LightTheme from "./lightTheme.json";
 
-export default createMuiTheme(Theme);
+export const lightTheme = createMuiTheme(LightTheme);
+export const darkTheme = createMuiTheme(DarkTheme);

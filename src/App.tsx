@@ -1,16 +1,17 @@
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import React from "react";
 import ButtonAppBar from "./components/toolbar";
 import { darkTheme, lightTheme } from "./ui/theme";
 
 function App() {
-  const [isDarkMode, setDarkMode] = React.useState(false);
+  const [isDarkMode, setDarkMode] = React.useState(true);
+  const theme = isDarkMode === true ? darkTheme : lightTheme;
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <ButtonAppBar modeChanged={{ isDarkMode, setDarkMode }} />
-    </ThemeProvider>
+    </MuiThemeProvider>
   );
 }
 

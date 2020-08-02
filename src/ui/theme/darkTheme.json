@@ -186,9 +186,9 @@
     },
     "divider": "rgba(0, 0, 0, 0.12)",
     "secondary": {
-      "main": "#263238",
-      "light": "rgb(81, 91, 95)",
-      "dark": "rgb(26, 35, 39)",
+      "main": "#515151",
+      "light": "rgb(239, 242, 243)",
+      "dark": "rgb(165, 167, 168)",
       "contrastText": "#fff"
     },
     "common": { "black": "#000", "white": "#fff" },
@@ -214,5 +214,5 @@
       "contrastText": "#fff"
     }
   },
-  "themeName": "Outer Space Outer Space Pig"
+  "themeName": "Outer Space Porcelain Burro"
 }

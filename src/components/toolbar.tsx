@@ -2,7 +2,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
-import Switch from "@material-ui/core/Switch";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -25,7 +24,7 @@ export default function ButtonAppBar(props: {
   modeChanged: { isDarkMode: boolean; setDarkMode: any };
 }) {
   const classes = useStyles();
-  const { isDarkMode, setDarkMode } = props.modeChanged;
+  const { isDarkMode } = props.modeChanged;
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -41,16 +40,6 @@ export default function ButtonAppBar(props: {
           <Typography variant="h6" className={classes.title}>
             Maps
           </Typography>
-          <Switch
-            checked={isDarkMode}
-            onChange={e => {
-              console.log(e.target.checked);
-              setDarkMode(e.target.checked);
-            }}
-            color="default"
-            name="checkedB"
-            inputProps={{ "aria-label": "primary checkbox" }}
-          />
           <IconButton
             edge="end"
             aria-label="account of current user"
@@ -60,7 +49,9 @@ export default function ButtonAppBar(props: {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Button color="secondary">Hello</Button>
+      <Button variant="contained" color="secondary">
+        Hello {String(isDarkMode)}
+      </Button>
     </div>
   );
 }
